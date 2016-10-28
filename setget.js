@@ -2,7 +2,10 @@ function set(key, value) {
     if (key === undefined || key === null) {
         throw new Error("missing key for localStorage set");
     }
-    if (value === undefined)
+    if (key === "*") {
+        localStorage.clear();
+    }
+    else if (value === undefined)
     {
         delete localStorage[key];
     }
