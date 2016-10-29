@@ -26,6 +26,13 @@ function get(key, defaultValue) {
     if (key === undefined || key === null) {
         throw new Error("missing key for localStorage retrieval");
     }
+    if (key === "*") {
+        var obj = {};
+        for (var i in localStorage) {
+            obj[i] = get(i);
+        }
+        return obj;
+    }
     var value = localStorage[key];
     if (value === undefined) {
         return defaultValue;
