@@ -17,7 +17,7 @@
         if (key === "*") {
             localStorage.clear();
         }
-        else if (value === undefined)
+        else if (value === undefined || value === null)
         {
             delete localStorage[key];
         }
