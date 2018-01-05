@@ -1,12 +1,31 @@
 # Description
-2 simple methods for handling localStorage in Javascript web development.
+2 simple Javscript methods for handling LocalStorage.
 
-# Usage
+# Set a Key
 ```javascript
-set("mykey", "myvalue"); // localStorage[key] = value;
-set("mykey", [1, 2, 3]); // localStorage[key] = JSON.stringify([1, 2, 3]);
-set("mykey"); // delete localStorage[key];
-set("*"); // localStorage.clear();
-get("mykey"); // returns localStorage[key];
-get("mykey", 123); // returns 123 if localStorage[key] === undefined
+set('name', 'Joe');
+set('list', [1, 2, 3]);
+set('config', { saved: true });
+```
+
+# Clear a Single Key
+```javascript
+set('name');
+```
+
+# Clear All Keys
+```javascript
+set('*');
+```
+
+# Get a Key
+```
+get('name'); // 'Joe'
+get('list'); // [1, 2, 3]
+```
+
+
+# Get All Keys
+```javascript
+get('*'); // { name: 'Joe', list: [1, 2, 3], config: { saved: true } }
 ```
