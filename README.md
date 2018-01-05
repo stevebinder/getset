@@ -19,7 +19,7 @@ set('*');
 ```
 
 ### Get a Key
-```
+```javascript
 get('name'); // 'Joe'
 get('list'); // [1, 2, 3]
 ```
