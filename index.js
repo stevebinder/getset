@@ -14,6 +14,11 @@ function _debounce(method, args, time) {
 }
 
 export function set(key, value, debounce) {
+    if (key && typeof key === 'object') {
+        Object.entries(key).forEach(([k, v]) => set(k, v, value));
+        return;
+    }
+    console.log('set>', key, value, debounce);
     if (debounce) {
         _debounce(set, [key, value], debounce);
         return;
